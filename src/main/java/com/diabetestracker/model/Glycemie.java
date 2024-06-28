@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Builder
 @Entity
 public class Glycemie {
@@ -24,10 +23,21 @@ public class Glycemie {
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime date;
 
+    private String mealTime;
+
+
     public Glycemie(Double value, LocalDateTime date, String unit) {
         this.value = value;
         this.date = date;
 //        this.level = level;
         this.unit = unit;
+    }
+
+    public Glycemie(Long id, Double value, String unit, LocalDateTime date, String mealTime) {
+        this.id = id;
+        this.value = value;
+        this.unit = unit;
+        this.date = date;
+        this.mealTime = mealTime;
     }
 }
