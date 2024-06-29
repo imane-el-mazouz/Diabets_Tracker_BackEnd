@@ -33,4 +33,10 @@ public class GlycemieService {
     public List<Glycemie> findAllByDate(LocalDateTime date) {
         return glycemieRepository.findAllByDate(date);
     }
+
+    public Glycemie getGlycemieById(Long id) {
+        return glycemieRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Glycemie not found with id: " + id));
+    }
+
 }
