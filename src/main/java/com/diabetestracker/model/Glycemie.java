@@ -24,7 +24,7 @@ public class Glycemie {
     private LocalDateTime date;
 
     private String mealTime;
-
+    private String source;
 
     public Glycemie(Double value, LocalDateTime date, String unit) {
         this.value = value;
@@ -33,11 +33,12 @@ public class Glycemie {
         this.unit = unit;
     }
 
-    public Glycemie(Long id, Double value, String unit, LocalDateTime date, String mealTime) {
+    public Glycemie(Long id, Double value, String unit, LocalDateTime date, String mealTime , String source) {
         this.id = id;
         this.value = value;
         this.unit = unit;
         this.date = date;
         this.mealTime = mealTime;
+        this.source = source;
     }
 }
